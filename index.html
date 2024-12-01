@@ -23,6 +23,16 @@
             z-index: 1;
             max-width: 800px;
             padding: 20px;
+            position: relative;
+        }
+
+        video {
+            width: 60%;
+            max-width: 600px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
@@ -64,7 +74,6 @@
             animation: fall linear infinite;
         }
 
-        /* Animasi Zoom */
         @keyframes zoomIn {
             0% {
                 transform: scale(0.5);
@@ -109,6 +118,10 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
+            video {
+                width: 80%;
+                max-width: none;
+            }
             h1 {
                 font-size: 36px;
             }
@@ -124,6 +137,9 @@
         }
 
         @media (max-width: 768px) {
+            video {
+                width: 90%;
+            }
             h1 {
                 font-size: 28px;
             }
@@ -139,6 +155,9 @@
         }
 
         @media (max-width: 480px) {
+            video {
+                width: 100%;
+            }
             h1 {
                 font-size: 24px;
             }
@@ -153,6 +172,11 @@
 </head>
 <body>
     <div class="message-container">
+        <video autoplay loop muted playsinline>
+            <source src="Somebody To You - The Vamps ft. Demi Lovato (lirik terjemahan indonesia).mp4" type="video/mp4">
+            Browser Anda tidak mendukung elemen video.
+        </video>
+
         <h1>Hai Boy!</h1>
         <p>Ika mau bilang terima kasih banget buat Ical, moga aja seterusnya sama Ical!</p>
         <div class="heart">❤️</div>
