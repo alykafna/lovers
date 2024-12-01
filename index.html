@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Lucu untuk Pasangan</title>
+    <style>
+        body {
+            background-color: #fff0f6;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .message-container {
+            text-align: center;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #ff69b4;
+            margin-bottom: 20px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            animation: bounce 1s infinite alternate;
+        }
+
+        p {
+            font-size: 24px;
+            color: #333;
+            line-height: 1.6;
+            animation: zoomIn 1s ease-out forwards;
+            margin: 10px 0;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #ff69b4;
+            margin-top: 30px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .lovers {
+            font-size: 60px;
+            color: #ff6347;
+            margin-top: 40px;
+            animation: loversAnim 3s ease-out forwards 1s;
+        }
+
+        /* Falling hearts */
+        .falling-heart {
+            position: absolute;
+            top: -10%;
+            color: #ff69b4;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+
+        /* Animasi Zoom */
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes loversAnim {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 36px;
+            }
+            p {
+                font-size: 20px;
+            }
+            .heart {
+                font-size: 40px;
+            }
+            .lovers {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 18px;
+            }
+            .heart {
+                font-size: 35px;
+            }
+            .lovers {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .heart, .lovers {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h1>Hai Boy!</h1>
+        <p>Ika mau bilang terima kasih banget buat Ical, moga aja seterusnya sama Ical!</p>
+        <div class="heart">❤️</div>
+        <p>Ical tu ganteng, lucu, dan baik... Ical jaga kesehatan jangan sakit ya!</p>
+        <div class="lovers">💑</div>
+        <p>CEMANGAT ICAL❤️</p>
+    </div>
+
+    <!-- Falling hearts -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('falling-heart');
+            heart.innerText = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
